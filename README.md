@@ -1,5 +1,9 @@
 # JSON Schema Mapper for LLM Agents
 
+[![PHP](https://img.shields.io/packagist/php-v/llm-agents/json-schema-mapper.svg?style=flat-square)](https://packagist.org/packages/llm-agents/json-schema-mapper)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/llm-agents/json-schema-mapper.svg?style=flat-square)](https://packagist.org/packages/llm-agents/json-schema-mapper)
+[![Total Downloads](https://img.shields.io/packagist/dt/llm-agents/json-schema-mapper.svg?style=flat-square)](https://packagist.org/packages/llm-agents/json-schema-mapper)
+
 This package is a super handy JSON Schema Mapper for the LLM Agents project.
 
 ## What's it all about?
