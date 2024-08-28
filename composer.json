@@ -1,0 +1,29 @@
+{
+  "name": "llm-agents/json-schema-mapper",
+  "description": "JSON Schema to PHP Class Mapper for LLM Agents",
+  "license": "MIT",
+  "require": {
+    "php": "^8.3",
+    "spiral/json-schema-generator": "^1.0",
+    "llm-agents/agents": "^1.0",
+    "spiral/boot": "^3.13"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "LLM\\Agents\\JsonSchema\\Mapper\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "LLM\\Tests\\": "tests/src"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
