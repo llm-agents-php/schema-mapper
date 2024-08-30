@@ -26,6 +26,13 @@
   "config": {
     "sort-packages": true
   },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "LLM\\Agents\\JsonSchema\\Mapper\\Integration\\Laravel\\SchemaMapperServiceProvider"
+      ]
+    }
+  },
   "minimum-stability": "dev",
   "prefer-stable": true
 }
