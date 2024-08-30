@@ -48,7 +48,8 @@ composer require llm-agents/json-schema-mapper
 ### Setting it up in Spiral
 
 If you're using the Spiral framework (and why wouldn't you be? It's awesome!), you'll need to register the bootloader.
-Here's how:
+
+**Here's how:**
 
 1. Open up your `app/src/Application/Kernel.php` file.
 2. Add the `LLM\Agents\JsonSchema\Mapper\Integration\Spiral\SchemaMapperBootloader` to the `defineBootloaders()` method:
@@ -68,16 +69,17 @@ class Kernel extends \Spiral\Framework\Kernel
 }
 ```
 
-And that's it! The bootloader will take care of registering the SchemaMapper for you.
+And that's it! The bootloader will take care of registering all the necessary components for you.
 
 ### Setting it up in Laravel
 
-If you're using the Spiral framework (and why wouldn't you be? It's awesome!), you'll need to register the bootloader.
-Here's how:
+If you're using the Laravel framework, you'll need to register the Service provider.
+
+**Here's how:**
 
 Just register the `LLM\Agents\JsonSchema\Mapper\Integration\Laravel\SchemaMapperServiceProvider`
 
-And that's it! The service provider will take care of registering the SchemaMapper for you.
+And that's it! The service provider will take care of registering all the necessary components for you.
 
 ## How to Use It
 
