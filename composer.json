@@ -6,11 +6,12 @@
     "php": "^8.3",
     "spiral/json-schema-generator": "^1.0",
     "llm-agents/agents": "^1.0",
-    "cuyz/valinor": "^1.12",
-    "spiral/boot": "^3.13"
+    "cuyz/valinor": "^1.12"
   },
   "require-dev": {
-    "phpunit/phpunit": "^11.3"
+    "phpunit/phpunit": "^11.3",
+    "spiral/boot": "^3.13",
+    "illuminate/support": "^v11.0"
   },
   "autoload": {
     "psr-4": {

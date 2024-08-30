@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace LLM\Agents\JsonSchema\Mapper\Bootloader;
+namespace LLM\Agents\JsonSchema\Mapper\Integration\Spiral;
 
 use CuyZ\Valinor\Cache\FileSystemCache;
 use CuyZ\Valinor\Mapper\TreeMapper;
