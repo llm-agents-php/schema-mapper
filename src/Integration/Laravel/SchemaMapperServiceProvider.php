@@ -24,8 +24,8 @@ final class SchemaMapperServiceProvider extends ServiceProvider
         $this->app->singleton(
             TreeMapper::class,
             static fn(
-                MapperBuilder $builder,
-            ) => $builder->build(),
+                Application $app,
+            ) => $app->make(MapperBuilder::class)->build(),
         );
 
         $this->app->singleton(
