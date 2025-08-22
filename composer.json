@@ -4,7 +4,7 @@
   "license": "MIT",
   "require": {
     "php": "^8.3",
-    "spiral/json-schema-generator": "^1.0",
+    "spiral/json-schema-generator": "^2.0",
     "llm-agents/agents": "^1.0",
     "cuyz/valinor": "^1.12"
   },

@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace LLM\Agents\JsonSchema\Mapper\Integration\Laravel;
 
 use CuyZ\Valinor\Cache\FileSystemCache;
-use CuyZ\Valinor\Mapper\TreeMapper;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 use LLM\Agents\JsonSchema\Mapper\MapperBuilder;
 use LLM\Agents\JsonSchema\Mapper\SchemaMapper;
 use LLM\Agents\Tool\SchemaMapperInterface;
+use Spiral\JsonSchemaGenerator\Generator;
 
 final class SchemaMapperServiceProvider extends ServiceProvider
 {
@@ -18,28 +18,23 @@ final class SchemaMapperServiceProvider extends ServiceProvider
     {
         $this->app->singleton(
             SchemaMapperInterface::class,
-            SchemaMapper::class,
-        );
-
-        $this->app->singleton(
-            TreeMapper::class,
-            static fn(
+            static function (
                 Application $app,
-            ) => $app->make(MapperBuilder::class)->build(),
-        );
+            ) {
+                $mapper = (new MapperBuilder(
+                    cache: match (true) {
+                        $app->environment('prod') => new FileSystemCache(
+                            cacheDir: $app->storagePath('cache/valinor'),
+                        ),
+                        default => null,
+                    },
+                ))->build();
 
-        $this->app->singleton(
-            MapperBuilder::class,
-            static fn(
-                Application $app,
-            ) => new MapperBuilder(
-                cache: match (true) {
-                    $app->environment('prod') => new FileSystemCache(
-                        cacheDir: $app->storagePath('cache/valinor'),
-                    ),
-                    default => null,
-                },
-            ),
+                return new SchemaMapper(
+                    generator: $app->get(Generator::class),
+                    mapper: $mapper,
+                );
+            },
         );
     }
 }
